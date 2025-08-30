@@ -15,7 +15,7 @@ export default function Home() {
         Welcome to Student Management System!
       </h1>
       <p className="text-base sm:text-lg md:text-xl text-center mb-6 px-4 sm:px-6 md:px-12 text-white">
-        Manage your school's information efficiently.
+        Manage your school&apos;s information efficiently.
       </p>
       <button onClick={handleGetStarted} className="bg-white text-blue-500 py-2 px-4 sm:py-2 md:py-4 md:px-8 rounded-lg hover:bg-gray-100">
         Get Started
