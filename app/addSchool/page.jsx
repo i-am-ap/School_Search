@@ -1,10 +1,12 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AddSchool() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [message, setMessage] = useState("");
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     const formData = new FormData();
@@ -28,6 +30,10 @@ export default function AddSchool() {
     if (res.ok) {
       setMessage("✅ School added successfully!");
       reset();
+
+      // ✅ Route to showSchools page
+      router.push("/showSchools"); 
+
     } else {
       setMessage("❌ " + result.error);
     }
@@ -76,6 +82,7 @@ export default function AddSchool() {
         {errors.image && <p className="text-red-500">Image is required</p>}
 
         <button type="submit"
+            onClick={handleSubmit(onSubmit)}
           className="w-full bg-blue-500 text-white py-2 rounded-xl hover:bg-blue-600 transition sm:py-2 md:py-3">
           Submit
         </button>
