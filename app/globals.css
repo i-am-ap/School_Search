@@ -1,4 +1,18 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: your global overrides */
+:root { color-scheme: light; }
+body { @apply bg-gray-50 text-gray-900; }
+
+/* small helpers used in starter */
+.container { @apply max-w-6xl mx-auto px-4; }
+.card { @apply bg-white rounded-2xl shadow p-4; }
+.input { @apply w-full rounded-xl border border-gray-300 px-3 py-2; }
+.label { @apply text-sm font-medium text-gray-700; }
+
 
 :root {
   --background: #ffffff;
@@ -24,3 +38,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 5vh;
+    /* font-weight: inherit; */
+}
+
