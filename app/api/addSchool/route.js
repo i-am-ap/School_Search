@@ -58,8 +58,6 @@
 import { NextResponse } from "next/server";
 import pool from "../../../db";
 import { v2 as cloudinary } from "cloudinary";
-import multer from "multer";
-import nextConnect from "next-connect";
 
 // Cloudinary setup
 cloudinary.config({
@@ -68,20 +66,26 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Multer setup for file upload
-const upload = multer({ storage: multer.memoryStorage() });
-
-const handler = nextConnect();
-handler.use(upload.single("image"));
-
-handler.post(async (req, res) => {
+// ✅ Handle POST request
+export async function POST(req) {
   try {
-    const { name, address, city, state, contact, email_id } = req.body;
-    const file = req.file;
+    const formData = await req.formData();
+    const name = formData.get("name");
+    const address = formData.get("address");
+    const city = formData.get("city");
+    const state = formData.get("state");
+    const contact = formData.get("contact");
+    const email_id = formData.get("email_id");
+    const file = formData.get("image"); // uploaded file
 
     let imageUrl = "";
 
     if (file) {
+      // Convert file to buffer
+      const arrayBuffer = await file.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+
+      // Upload buffer to Cloudinary
       const result = await new Promise((resolve, reject) => {
         const stream = cloudinary.uploader.upload_stream(
           { folder: "schoolImages" },
@@ -90,12 +94,13 @@ handler.post(async (req, res) => {
             else resolve(result);
           }
         );
-        stream.end(file.buffer);
+        stream.end(buffer);
       });
 
       imageUrl = result.secure_url;
     }
 
+    // Save school details in DB
     await pool.query(
       "INSERT INTO schools (name, address, city, state, contact, image, email_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [name, address, city, state, contact, imageUrl, email_id]
@@ -106,20 +111,4 @@ handler.post(async (req, res) => {
     console.error(err);
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
   }
-});
-
-export const POST = handler;
-export const config = {
-  api: {
-    bodyParser: false, // disable default parser because multer handles files
-  },
-};
-
-
-
-
-
-
-
-
-
+}
