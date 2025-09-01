@@ -45,6 +45,15 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 
 ---
 
+## 📷 Screenshots
+<img width="1918" height="910" alt="image" src="https://github.com/user-attachments/assets/a4b28240-7aec-4358-9114-45d17a5d70f8" />
+
+<img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/41937726-8710-4cf1-9437-9ec481fc8586" />
+
+<img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/08520f10-bf3a-4078-8ec2-a305c3124683" />
+
+---
+
 ## ⚡ Installation & Setup
 
 1. **Clone the repository:**
