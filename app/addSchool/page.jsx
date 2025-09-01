@@ -48,7 +48,7 @@ export default function AddSchool() {
 
     <div className="flex flex-col justify-center items-center bg-gradient-to-tr from-blue-500 via-purple-700 to-pink-500 p-4 min-h-screen">
         <div className=" flex justify-center items-center mb-6">
-            <h1 className=" text-2xl sm:text-xl font-bold text-white">School Management</h1>
+            <h1 className=" text-2xl sm:text-xl font-bold text-white">School Details</h1>
         </div>
     <div className="flex justify-center items-center mx-4">
       <form onSubmit={handleSubmit(onSubmit)} className="bg-transparent border border-gray-300 p-8 rounded-xl shadow-md w-full max-w-lg space-y-4 sm:p-6 sm:mx-4">
