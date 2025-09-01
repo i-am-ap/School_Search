@@ -103,13 +103,9 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 
 ## 👨‍💻 Author
 
-**Aryan Palaspagar**
+**Developed & Designed with ❤️ by Aryan Palaspagar**
 [Portfolio / Projects](https://devaryan-alpha.vercel.app/) 🌐
 
 ---
 
 ## 🎉 Enjoy exploring schools with this modern app! 🏫✨
-
-```
-
-
