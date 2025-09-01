@@ -1,9 +1,8 @@
-````markdown
 # 🎓 School Search App
 
 Welcome to **School Search**! 🌟 This is a modern, responsive web application that allows users to **add, view, and manage schools** efficiently. The app leverages **Next.js**, **Tailwind CSS**, **MySQL**, and **cloud services** to provide a fast and seamless experience.
 
-🌐 **Live Demo:** [https://school-search-one.vercel.app](https://school-search-one.vercel.app)  
+🌐 **Live Demo:** (https://school-search-one.vercel.app)  
 
 ---
 
