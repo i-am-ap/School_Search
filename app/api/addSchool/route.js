@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import  pool  from "@/lib/db"; // export default, hence no "{}"
-import path from "path";
-import fs from "fs/promises";
+// import path from "path";
+// import fs from "fs/promises";
+import { put } from "@vercel/blob"; // import Vercel Blob
 
 export async function POST(req) {
   try {
@@ -14,13 +15,26 @@ export async function POST(req) {
     const state = formData.get("state");
     const imageFile = formData.get("image");
 
-    // ✅ Save image to /public/schoolImages
-    let imagePath = null;
+    // // ✅ Save image to /public/schoolImages
+    // let imagePath = null;
+    // if (imageFile && imageFile.name) {
+    //   const buffer = Buffer.from(await imageFile.arrayBuffer());
+    //   imagePath = `/schoolImages/${Date.now()}-${imageFile.name}`;
+    //   const filePath = path.join(process.cwd(), "public", imagePath);
+    //   await fs.writeFile(filePath, buffer);
+    // }
+
+    // ✅ Upload image to Vercel Blob instead of local /public
+    let imageUrl = null;
     if (imageFile && imageFile.name) {
       const buffer = Buffer.from(await imageFile.arrayBuffer());
-      imagePath = `/schoolImages/${Date.now()}-${imageFile.name}`;
-      const filePath = path.join(process.cwd(), "public", imagePath);
-      await fs.writeFile(filePath, buffer);
+
+      const blob = await put(`${Date.now()}-${imageFile.name}`, buffer, {
+        access: "public", // you can also set "private"
+        token: process.env.BLOB_READ_WRITE_TOKEN,
+      });
+
+      imageUrl = blob.url; // ✅ get public URL
     }
 
     // ✅ Check if school already exists (by email or name)
@@ -38,7 +52,7 @@ export async function POST(req) {
     // ✅ Insert into DB
     const [result] = await pool.query(
       "INSERT INTO schools (name, address, city, state, contact, image, email_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      [name, address, city, state, contact, imagePath, email_id]
+      [name, address, city, state, contact, imageUrl, email_id]
     );
     console.log("Insert result:", result);
 
