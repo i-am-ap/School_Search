@@ -113,7 +113,7 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 ## 👨‍💻 Author
 
 **Developed & Designed with ❤️ by Aryan Palaspagar**
-[Portfolio / Projects](https://devaryan-alpha.vercel.app/) 🌐
+[Portfolio](https://devaryan-alpha.vercel.app/) 🌐
 
 ---
 
