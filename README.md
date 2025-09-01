@@ -91,8 +91,7 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 /public
  └─ schoolImages (local only, production uses Vercel Blob)
 ```
-
----
+````
 
 ## 💡 Notes
 
@@ -105,7 +104,7 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 ## 👨‍💻 Author
 
 **Aryan Palaspagar**
-[Portfolio / Projects](https://school-search-one.vercel.app) 🌐
+[Portfolio / Projects](https://devaryan-alpha.vercel.app/) 🌐
 
 ---
 
@@ -113,9 +112,4 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 
 ```
 
----
 
-If you want, I can also make a **shorter, super-clean README** version specifically for **GitHub**, optimized for **readers scanning your project fast**.  
-
-Do you want me to do that too?
-```
