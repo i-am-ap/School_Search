@@ -15,15 +15,6 @@ export async function POST(req) {
     const state = formData.get("state");
     const imageFile = formData.get("image");
 
-    // // ✅ Save image to /public/schoolImages
-    // let imagePath = null;
-    // if (imageFile && imageFile.name) {
-    //   const buffer = Buffer.from(await imageFile.arrayBuffer());
-    //   imagePath = `/schoolImages/${Date.now()}-${imageFile.name}`;
-    //   const filePath = path.join(process.cwd(), "public", imagePath);
-    //   await fs.writeFile(filePath, buffer);
-    // }
-
     // ✅ Upload image to Vercel Blob instead of local /public
     let imageUrl = null;
     if (imageFile && imageFile.name) {
