@@ -6,13 +6,21 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 
 ---
 
-## 🚀 Features
+🚀 Features
 
-- ✅ Add new schools with details like **name, address, city, state, contact, email**, and **image**  
-- ✅ View schools in a **dynamic, responsive grid layout**  
-- ✅ Upload school images to **Vercel Blob** for cloud storage  
-- ✅ 🔍 Powerful **search bar** to filter schools by **name, address, city, or state** 
-- ✅ Fully responsive for **mobile, tablet, and desktop**  
+✅ Add new schools with details like name, address, city, state, contact, email, and image
+
+✅ View schools in a dynamic, responsive grid layout
+
+✅ Upload school images to Vercel Blob for cloud storage
+
+✅ 🔍 Powerful search bar to filter schools by name, address, city, or state
+
+✅ 📑 Pagination support – automatically organizes schools into pages (8 per page)
+
+✅ 🌍 Backend-powered search – search works across all schools, not just the first page
+
+✅ Fully responsive for mobile, tablet, and desktop
 
 ---
 
@@ -50,7 +58,8 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 
 <img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/41937726-8710-4cf1-9437-9ec481fc8586" />
 
-<img width="1918" height="912" alt="image" src="https://github.com/user-attachments/assets/1febdfd5-235f-4078-845d-6598ea713fbc" />
+<img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/ffe9c532-f8c7-45c1-8e18-116bcee28113" />
+
 
 
 ---
