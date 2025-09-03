@@ -11,7 +11,7 @@ Welcome to **School Search**! 🌟 This is a modern, responsive web application 
 - ✅ Add new schools with details like **name, address, city, state, contact, email**, and **image**  
 - ✅ View schools in a **dynamic, responsive grid layout**  
 - ✅ Upload school images to **Vercel Blob** for cloud storage  
-- ✅ Search schools by **name or email**  
+- ✅ 🔍 Powerful **search bar** to filter schools by **name, address, city, or state** 
 - ✅ Fully responsive for **mobile, tablet, and desktop**  
 
 ---
