@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import  pool  from "@/lib/db"; // export default, hence no "{}"
-// import path from "path";
-// import fs from "fs/promises";
 import { put } from "@vercel/blob"; // import Vercel Blob
 
 export async function POST(req) {
